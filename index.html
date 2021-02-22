@@ -9,7 +9,7 @@
         maximum-scale = float_value ,
         user-scalable = [yes | no] ,
         target-densitydpi = [dpi_value | device-dpi | high-dpi | medium-dpi | low-dpi] />
-	<title>two</title>
+	<title>LOVE HPM FOREVER</title>
 	<style type="text/css">
 	@import url("https://fonts.googleapis.com/css?family=Aleo");
 	@import url("https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:900");
@@ -814,7 +814,7 @@
 	<div class="page page0 cur" id="page0">
 		<div id="audio" class="audio audio-off">
 
-	<audio id="audio-my"  src="music/就是爱你.mp3" preload="metadata"></audio>
+	<audio id="audio-my"  src="music/loveyou.mp3" preload="metadata"></audio>
 	
 	<div class="audio-head">
 		<div class="audio-head-tittle">
@@ -1012,7 +1012,6 @@
             </ul></div>
     </div>
 		</div>
-		<div class="page page4" id="page4"><h1>你好，我是4号屏幕</h1></div>
 	</div>
 
 	<img  class="xiangxiatishi" src="img/down.png" />
@@ -1291,62 +1290,11 @@ class Snow3 {
     requestAnimationFrame(this.updateBound);
   }
 }
-class Snow4 {
-  constructor() {
-    this.canvas = document.createElement("canvas");
-    this.ctx = this.canvas.getContext("2d");
 
-    document.body.appendChild(this.canvas);
-	//$('#con').after(this.canvas);
-
-    window.addEventListener("resize", () => this.onResize());
-    this.onResize();
-    this.updateBound = this.update.bind(this);
-    requestAnimationFrame(this.updateBound);
-
-    this.createSnowflakes();
-  }
-
-  onResize() {
-    this.width = window.innerWidth;
-    this.height = window.innerHeight;
-    this.canvas.width = this.width;
-    this.canvas.height = this.height;
-  }
-
-  createSnowflakes() {
-    const flakes = window.innerWidth / 4;
-
-    this.snowflakes = [];
-
-    for (let s = 0; s < flakes; s++) {
-      this.snowflakes.push(new Snowflake());
-    }
-  }
-
-  update() {
-    this.ctx.clearRect(0, 0, this.width, this.height);
-
-    for (let flake of this.snowflakes) {
-      flake.update();
-
-      this.ctx.save();
-      this.ctx.fillStyle = "#FFF";
-      this.ctx.beginPath();
-      this.ctx.arc(flake.x, flake.y, flake.radius, 0, Math.PI * 2);
-      this.ctx.closePath();
-      this.ctx.globalAlpha = flake.alpha;
-      this.ctx.fill();
-      this.ctx.restore();
-    }
-    requestAnimationFrame(this.updateBound);
-  }
-}
 new Snow();
 new Snow1();
 new Snow2();
 new Snow3();
-new Snow4();
 ////////////////////////////////////////////////////////////
 
 // Simple CountDown Clock
